@@ -1,10 +1,17 @@
 {
-  "plugins": ["compat"],
-  "extends": ["next/core-web-vitals", "plugin:compat/recommended"],
+  "extends": "next/core-web-vitals",
+  "plugins": ["import"],
   "rules": {
-    "no-undef": "warn"
-  },
-  "settings": {
-    "polyfills": ["Promise", "fetch", "URLSearchParams", "performance", "URL"]
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "groups": ["builtin", "external", "internal", ["parent", "sibling", "index"]],
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
   }
 }
